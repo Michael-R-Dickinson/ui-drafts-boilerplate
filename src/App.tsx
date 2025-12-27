@@ -1,5 +1,5 @@
 import { Route, Switch } from "wouter"
-import Design1 from "./pages/Design1"
+import Design1 from "./pages/Design1/Design1"
 import Home from "./pages/Home"
 import NotFoundPage from "./pages/NotFoundPage"
 
