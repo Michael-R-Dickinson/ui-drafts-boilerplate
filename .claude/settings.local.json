@@ -3,7 +3,9 @@
     "allow": [
       "mcp__shadcn__get_project_registries",
       "mcp__shadcn__get_add_command_for_items",
-      "Bash(pnpm dlx:*)"
+      "Bash(pnpm dlx:*)",
+      "Bash(pnpm run lint)",
+      "Bash(pnpm run build:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

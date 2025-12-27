@@ -28,7 +28,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { subscriptions } from "../data"
-import type { Subscription, BillingCycle, Category } from "../types"
+import type { Subscription, Category } from "../types"
 import { cn } from "@/lib/utils"
 
 const categoryColors: Record<Category, string> = {

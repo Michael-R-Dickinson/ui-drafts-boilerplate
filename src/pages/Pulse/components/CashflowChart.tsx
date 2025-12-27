@@ -8,8 +8,6 @@ interface CashflowChartProps {
 export function CashflowChart({ data }: CashflowChartProps) {
   const maxValue = Math.max(...data.flatMap((d) => [d.income, d.expenses]))
   const chartHeight = 200
-  const barWidth = 32
-  const groupGap = 40
 
   return (
     <Card>

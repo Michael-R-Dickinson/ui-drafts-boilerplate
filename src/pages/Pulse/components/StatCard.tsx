@@ -1,4 +1,5 @@
-import { LucideIcon, TrendingUp, TrendingDown } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
+import { TrendingUp, TrendingDown } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
@@ -7,7 +8,6 @@ interface StatCardProps {
   value: string | number
   change?: number
   icon?: LucideIcon
-  trend?: "up" | "down"
   onClick?: () => void
 }
 
@@ -16,7 +16,6 @@ export function StatCard({
   value,
   change,
   icon: Icon,
-  trend,
   onClick,
 }: StatCardProps) {
   const showChange = change !== undefined && change !== 0
