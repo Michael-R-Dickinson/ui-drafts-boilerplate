@@ -1,17 +1,19 @@
-import { useState } from "react"
+import { Route, Switch } from "wouter"
+import Design1 from "./pages/Design1"
+import Home from "./pages/Home"
+import NotFoundPage from "./pages/NotFoundPage"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      <div
-        className="card bg-green-500 text-3xl"
-        onClick={() => setCount((count) => count + 1)}
-      >
-        {count}
-      </div>
-    </div>
+    <Switch>
+      <Route path="/">
+        <Home />
+      </Route>
+      <Route path="design1">
+        <Design1 />
+      </Route>
+      <NotFoundPage />
+    </Switch>
   )
 }
 
