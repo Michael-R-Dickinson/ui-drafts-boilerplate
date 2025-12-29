@@ -1,4 +1,5 @@
 import Card from "./Card"
+import CardVariant from "./CardVariant"
 
 const PlayingCards = () => {
   return (
@@ -6,8 +7,8 @@ const PlayingCards = () => {
       <div className="grid grid-cols-2 gap-8">
         <Card suit="club" value="8" />
         <Card suit="diamond" value="A" />
-        <Card suit="heart" value="K" />
-        <Card suit="spade" value="Q" />
+        <CardVariant suit="heart" value="K" />
+        <CardVariant suit="spade" value="7" />
       </div>
     </div>
   )
