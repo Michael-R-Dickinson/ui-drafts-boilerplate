@@ -14,6 +14,16 @@ const Home = () => {
               Pulse - Personal Finance Tracker
             </a>
           </Link>
+          <Link href="/pulse-minimal">
+            <a className="text-blue-500 hover:underline">
+              Pulse Minimal - Clean Minimalist Design
+            </a>
+          </Link>
+          <Link href="/pulse-vibrant">
+            <a className="text-blue-500 hover:underline">
+              Pulse Vibrant - Colorful Data-Rich Design
+            </a>
+          </Link>
         </div>
       </div>
     </div>
