@@ -24,6 +24,16 @@ const Home = () => {
               Pulse Vibrant - Colorful Data-Rich Design
             </a>
           </Link>
+          <Link href="/mobile-poker">
+            <a className="text-blue-500 hover:underline">
+              Mobile Poker - Wireframe
+            </a>
+          </Link>
+          <Link href="/playing-cards">
+            <a className="text-blue-500 hover:underline">
+              Playing Cards - Design Exploration
+            </a>
+          </Link>
         </div>
       </div>
     </div>

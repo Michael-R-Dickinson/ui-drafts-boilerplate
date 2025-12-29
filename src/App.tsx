@@ -4,6 +4,8 @@ import Home from "./pages/Home"
 import Pulse from "./pages/Pulse"
 import PulseMinimal from "./pages/PulseMinimal/PulseMinimal"
 import PulseVibrant from "./pages/PulseVibrant"
+import MobilePoker from "./pages/MobilePoker"
+import PlayingCards from "./pages/PlayingCards/PlayingCards"
 import NotFoundPage from "./pages/NotFoundPage"
 
 function App() {
@@ -23,6 +25,12 @@ function App() {
       </Route>
       <Route path="/pulse-vibrant">
         <PulseVibrant />
+      </Route>
+      <Route path="/mobile-poker">
+        <MobilePoker />
+      </Route>
+      <Route path="/playing-cards">
+        <PlayingCards />
       </Route>
       <NotFoundPage />
     </Switch>
