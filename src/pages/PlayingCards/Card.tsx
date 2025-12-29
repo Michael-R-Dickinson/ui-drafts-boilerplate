@@ -29,7 +29,7 @@ const Card = ({ suit, value }: CardProps) => {
   const textColor = suitColors[suit]
 
   return (
-    <div className="relative h-96 w-64 rounded-xl border border-slate-200 bg-white p-4 shadow-xl">
+    <div className="relative h-96 w-64 rounded-xl border border-slate-200 bg-white p-4 shadow-xl" style={{ boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1), 8px 8px 0px 0px rgb(0 0 0 / 0.08)' }}>
       <div className={`absolute left-3 top-3 flex flex-col items-center ${textColor}`}>
         <span className="text-3xl font-bold leading-none">{value}</span>
         <img src={suitImages[suit]} alt={suit} className="h-6 w-6" />
