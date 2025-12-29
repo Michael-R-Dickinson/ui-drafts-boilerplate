@@ -9,3 +9,5 @@ Each UI Design should be self contained in its own directory under pages. This m
 
 ## Procedure
 Remember to build and lint before finishing a page. It is very important you do this to ensure it runs smoothly
+
+Also when you're done will a page, add it to the routes in App.tsx
