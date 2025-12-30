@@ -29,23 +29,23 @@ const Card = ({ suit, value }: CardProps) => {
   const textColor = suitColors[suit]
 
   return (
-    <div className="relative h-64 w-44 rounded-xl border border-slate-200 bg-white p-3 shadow-xl" style={{ boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1), 8px 8px 0px 0px rgb(0 0 0 / 0.08)' }}>
-      <div className={`absolute left-2 top-2 flex flex-col items-center ${textColor}`}>
-        <span className="text-4xl font-bold leading-none">{value}</span>
-        <img src={suitImages[suit]} alt={suit} className="h-8 w-8" />
+    <div className="relative h-32 w-22 rounded-lg border border-slate-200 bg-white p-1.5 shadow-lg" style={{ boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1), 4px 4px 0px 0px rgb(0 0 0 / 0.08)' }}>
+      <div className={`absolute left-1 top-1 flex flex-col items-center ${textColor}`}>
+        <span className="text-lg font-bold leading-none">{value}</span>
+        <img src={suitImages[suit]} alt={suit} className="h-3.5 w-3.5" />
       </div>
 
       <div className="flex h-full items-center justify-center">
         <img
           src={suitImages[suit]}
           alt={suit}
-          className="h-24 w-24 object-contain opacity-90"
+          className="h-12 w-12 object-contain opacity-90"
         />
       </div>
 
-      <div className={`absolute bottom-2 right-2 flex rotate-180 flex-col items-center ${textColor}`}>
-        <span className="text-4xl font-bold leading-none">{value}</span>
-        <img src={suitImages[suit]} alt={suit} className="h-8 w-8" />
+      <div className={`absolute bottom-1 right-1 flex rotate-180 flex-col items-center ${textColor}`}>
+        <span className="text-lg font-bold leading-none">{value}</span>
+        <img src={suitImages[suit]} alt={suit} className="h-3.5 w-3.5" />
       </div>
     </div>
   )
