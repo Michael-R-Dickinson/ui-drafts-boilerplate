@@ -5,7 +5,7 @@ const HostDeviceUI = () => {
   const potSize = 1250
 
   return (
-    <div className="flex h-screen items-center justify-center bg-gradient-to-br from-green-700 via-green-800 to-green-900 p-4">
+    <div className="flex h-screen items-center justify-center p-4" style={{ backgroundColor: '#0C0D12' }}>
       <div className="flex flex-col items-center gap-6">
         {/* Top Pot (Upside Down) */}
         <div className="rotate-180">
