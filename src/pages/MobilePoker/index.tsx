@@ -1,32 +1,46 @@
-import { useState } from 'react';
+import { useState } from "react"
 
 interface Player {
-  id: string;
-  name: string;
-  avatar: string;
-  status: 'active' | 'called' | 'folded' | 'raised';
-  chips: number;
-  currentBet?: number;
+  id: string
+  name: string
+  avatar: string
+  status: "active" | "called" | "folded" | "raised"
+  chips: number
+  currentBet?: number
 }
 
 interface Card {
-  suit: 'spades' | 'hearts' | 'diamonds' | 'clubs';
-  value: string;
+  suit: "spades" | "hearts" | "diamonds" | "clubs"
+  value: string
 }
 
 const MobilePoker = () => {
   const [opponents] = useState<Player[]>([
-    { id: '1', name: 'Tom', avatar: '', status: 'called', chips: 180, currentBet: 20 },
-    { id: '2', name: 'Sarah', avatar: '', status: 'active', chips: 250, currentBet: 20 },
-    { id: '3', name: 'Joe', avatar: '', status: 'folded', chips: 190 },
-  ]);
+    {
+      id: "1",
+      name: "Tom",
+      avatar: "",
+      status: "called",
+      chips: 180,
+      currentBet: 20,
+    },
+    {
+      id: "2",
+      name: "Sarah",
+      avatar: "",
+      status: "active",
+      chips: 250,
+      currentBet: 20,
+    },
+    { id: "3", name: "Joe", avatar: "", status: "folded", chips: 190 },
+  ])
 
-  const [pot] = useState(50);
-  const [playerBet] = useState(20);
+  const [bet] = useState(50)
+  const [playerBet] = useState(20)
   const [holeCards] = useState<Card[]>([
-    { suit: 'hearts', value: '9' },
-    { suit: 'spades', value: 'Q' },
-  ]);
+    { suit: "hearts", value: "9" },
+    { suit: "spades", value: "Q" },
+  ])
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden">
@@ -34,46 +48,64 @@ const MobilePoker = () => {
       <div className="pt-8 pb-6 px-4">
         <div className="flex justify-center gap-3">
           {opponents.map((player) => (
-            <div key={player.id} className="flex flex-col items-center relative">
+            <div
+              key={player.id}
+              className="flex flex-col items-center relative"
+            >
               {/* Status Badge */}
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 z-10">
-                <div className={`text-[10px] px-2 py-0.5 rounded-full border ${
-                  player.status === 'folded'
-                    ? 'border-gray-600 text-gray-500'
-                    : 'border-gray-400 text-gray-300'
-                }`}>
-                  {player.status.charAt(0).toUpperCase() + player.status.slice(1)}
+                <div
+                  className={`text-[10px] px-2 py-0.5 rounded-full border ${
+                    player.status === "folded"
+                      ? "border-gray-600 text-gray-500"
+                      : "border-gray-400 text-gray-300"
+                  }`}
+                >
+                  {player.status.charAt(0).toUpperCase() +
+                    player.status.slice(1)}
                 </div>
               </div>
 
               {/* Avatar */}
-              <div className={`w-16 h-16 rounded-full border-2 flex items-center justify-center ${
-                player.status === 'folded'
-                  ? 'border-gray-700 bg-gray-900'
-                  : 'border-gray-500 bg-gray-800'
-              }`}>
+              <div
+                className={`w-16 h-16 rounded-full border-2 flex items-center justify-center ${
+                  player.status === "folded"
+                    ? "border-gray-700 bg-gray-900"
+                    : "border-gray-500 bg-gray-800"
+                }`}
+              >
                 <div className="w-8 h-8 rounded-full bg-gray-600" />
               </div>
 
               {/* Player Info */}
               <div className="mt-2 text-center">
-                <div className={`text-sm font-medium ${
-                  player.status === 'folded' ? 'text-gray-600' : 'text-gray-300'
-                }`}>
+                <div
+                  className={`text-sm font-medium ${
+                    player.status === "folded"
+                      ? "text-gray-600"
+                      : "text-gray-300"
+                  }`}
+                >
                   {player.name}
                 </div>
                 <div className="flex items-center justify-center gap-1 mt-1">
                   <div className="w-3 h-3 rounded-full bg-gray-700" />
-                  <span className={`text-xs ${
-                    player.status === 'folded' ? 'text-gray-700' : 'text-gray-400'
-                  }`}>
+                  <span
+                    className={`text-xs ${
+                      player.status === "folded"
+                        ? "text-gray-700"
+                        : "text-gray-400"
+                    }`}
+                  >
                     {player.chips}
                   </span>
                 </div>
-                {player.currentBet && player.status !== 'folded' && (
+                {player.currentBet && player.status !== "folded" && (
                   <div className="flex items-center justify-center gap-1 mt-0.5 px-2 py-0.5 bg-gray-800 rounded-full">
                     <div className="w-2.5 h-2.5 rounded-full bg-gray-600" />
-                    <span className="text-[10px] text-gray-400">{player.currentBet}</span>
+                    <span className="text-[10px] text-gray-400">
+                      {player.currentBet}
+                    </span>
                   </div>
                 )}
               </div>
@@ -86,10 +118,10 @@ const MobilePoker = () => {
       <div className="flex flex-col items-center pt-4 pb-6">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-4 h-4 rounded-full bg-gray-700" />
-          <span className="text-xs text-gray-400 tracking-wide">POT</span>
+          <span className="text-xs text-gray-400 tracking-wide">Bet</span>
         </div>
         <div className="text-7xl font-light tracking-tight text-white">
-          {pot}
+          {bet}
         </div>
       </div>
 
@@ -103,13 +135,19 @@ const MobilePoker = () => {
         >
           <defs>
             <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="8" result="coloredBlur" />
               <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
-            <linearGradient id="tableGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <linearGradient
+              id="tableGradient"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
               <stop offset="0%" stopColor="#4a4a4a" stopOpacity="0.4" />
               <stop offset="50%" stopColor="#6a6a6a" stopOpacity="0.6" />
               <stop offset="100%" stopColor="#4a4a4a" stopOpacity="0.4" />
@@ -164,7 +202,7 @@ const MobilePoker = () => {
               key={index}
               className="relative"
               style={{
-                transform: index === 0 ? 'rotate(-8deg)' : 'rotate(8deg)',
+                transform: index === 0 ? "rotate(-8deg)" : "rotate(8deg)",
                 zIndex: index,
               }}
             >
@@ -172,11 +210,13 @@ const MobilePoker = () => {
               <div className="w-28 h-40 bg-white rounded-xl border-2 border-gray-300 shadow-2xl flex flex-col items-center justify-between p-3">
                 {/* Top Value */}
                 <div className="flex flex-col items-center">
-                  <span className={`text-4xl font-bold ${
-                    card.suit === 'hearts' || card.suit === 'diamonds'
-                      ? 'text-gray-400'
-                      : 'text-gray-800'
-                  }`}>
+                  <span
+                    className={`text-4xl font-bold ${
+                      card.suit === "hearts" || card.suit === "diamonds"
+                        ? "text-gray-400"
+                        : "text-gray-800"
+                    }`}
+                  >
                     {card.value}
                   </span>
                   <div className="w-6 h-6 rounded-full bg-gray-700 mt-1" />
@@ -187,11 +227,13 @@ const MobilePoker = () => {
 
                 {/* Bottom Value (rotated) */}
                 <div className="flex flex-col items-center rotate-180">
-                  <span className={`text-4xl font-bold ${
-                    card.suit === 'hearts' || card.suit === 'diamonds'
-                      ? 'text-gray-400'
-                      : 'text-gray-800'
-                  }`}>
+                  <span
+                    className={`text-4xl font-bold ${
+                      card.suit === "hearts" || card.suit === "diamonds"
+                        ? "text-gray-400"
+                        : "text-gray-800"
+                    }`}
+                  >
                     {card.value}
                   </span>
                   <div className="w-6 h-6 rounded-full bg-gray-700 mt-1" />
@@ -224,7 +266,7 @@ const MobilePoker = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MobilePoker;
+export default MobilePoker

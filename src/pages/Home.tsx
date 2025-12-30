@@ -34,6 +34,11 @@ const Home = () => {
               Playing Cards - Design Exploration
             </a>
           </Link>
+          <Link href="/host-device-ui">
+            <a className="text-blue-500 hover:underline">
+              Host Device UI - Poker Table Display
+            </a>
+          </Link>
         </div>
       </div>
     </div>

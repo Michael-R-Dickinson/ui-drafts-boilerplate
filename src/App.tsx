@@ -6,6 +6,7 @@ import PulseMinimal from "./pages/PulseMinimal/PulseMinimal"
 import PulseVibrant from "./pages/PulseVibrant"
 import MobilePoker from "./pages/MobilePoker"
 import PlayingCards from "./pages/PlayingCards/PlayingCards"
+import HostDeviceUI from "./pages/HostDeviceUI/HostDeviceUI"
 import NotFoundPage from "./pages/NotFoundPage"
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
       </Route>
       <Route path="/playing-cards">
         <PlayingCards />
+      </Route>
+      <Route path="/host-device-ui">
+        <HostDeviceUI />
       </Route>
       <NotFoundPage />
     </Switch>
